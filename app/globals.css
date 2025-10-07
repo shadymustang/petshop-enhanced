@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --royalBlue: #0B3D91;
+  --gold: #D4AF37;
+}
+
+.text-royalBlue{ color: var(--royalBlue); }
+.bg-royalBlue{ background-color: var(--royalBlue); }
+.text-gold{ color: var(--gold); }
+.bg-gold{ background-color: var(--gold); }

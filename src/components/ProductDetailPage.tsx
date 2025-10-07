@@ -5,7 +5,7 @@ import { Card, CardContent } from './ui/card'
 import { Badge } from './ui/badge'
 import { ImageWithFallback } from './figma/ImageWithFallback'
 import { ArrowLeft, Star, Shield, Truck } from 'lucide-react'
-import { toast } from 'sonner@2.0.3'
+import { toast } from 'sonner'
 
 interface ProductDetailPageProps {
   product: Product
