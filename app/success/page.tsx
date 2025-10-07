@@ -6,8 +6,9 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
 export default function SuccessPage() {
-  const params = useSearchParams();
-  const bookingId = params.get('bookingId');
+const params = useSearchParams();
+const bookingId = params ? params.get('bookingId') : null;
+
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-royalBlue/6 to-white">

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Paw, ShoppingCart } from 'lucide-react';
+import { PawPrint, ShoppingCart } from 'lucide-react';
 
 export default function Header() {
   return (
@@ -10,7 +10,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-md bg-royalBlue flex items-center justify-center text-white shadow">
-            <Paw size={18} />
+            <PawPrint size={18} />
           </div>
           <div>
             <div className="font-bold text-royalBlue">Royal Pet Care</div>
