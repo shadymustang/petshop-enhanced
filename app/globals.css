@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* bring in the project's detailed design tokens and base layers */
+@import "../src/styles/globals.css";
+
 :root{
   --royalBlue: #0B3D91;
   --gold: #D4AF37;

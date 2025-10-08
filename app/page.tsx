@@ -1,31 +1,13 @@
-'use client'
+"use client"
 
 import React from "react";
 import { motion } from "framer-motion";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { getProducts, Product } from '@/lib/products';
 
-type Product = {
-  id: string;
-  name: string;
-  price: number;
-  unit: string;
-  img: string;
-  tag?: string;
-};
-
-const PRODUCTS: Product[] = [
-  { id: "royal-chicken-feast", name: "Royal Chicken Feast", price: 599, unit: "2kg", img: "/images/dog-chicken.jpg", tag: "Food" },
-  { id: "silky-salmon-mix", name: "Silky Coat Salmon Mix", price: 699, unit: "2kg", img: "/images/dog-salmon.jpg", tag: "Food" },
-  { id: "gentle-kitten-blend", name: "Gentle Kitten Blend", price: 499, unit: "1.5kg", img: "/images/kitten.jpg", tag: "Food" },
-  { id: "playful-dog-toy", name: "Playful Dog Toy", price: 249, unit: "single", img: "/images/toy-dog.jpg", tag: "Toys" },
-  { id: "cat-teaser", name: "Cat Teaser Wand", price: 199, unit: "single", img: "/images/toy-cat.jpg", tag: "Toys" },
-  { id: "leather-belt", name: "Premium Leather Collar", price: 349, unit: "one size", img: "/images/collar.jpg", tag: "Collar" },
-  { id: "grooming-kit", name: "Grooming Kit", price: 799, unit: "set", img: "/images/grooming-kit.jpg", tag: "Grooming" },
-  { id: "cozy-bed", name: "Cozy Pet Bed", price: 1299, unit: "large", img: "/images/bed.jpg", tag: "Home" }
-];
+const PRODUCTS: Product[] = getProducts();
 
 export default function Page() {
   const router = useRouter();
@@ -82,9 +64,9 @@ export default function Page() {
             </div>
           </div>
 
-          <motion.div initial={{ scale: 0.98, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 0.6 }} className="rounded-2xl overflow-hidden shadow-xl">
-            <Image src="/images/hero-dog.jpg" alt="hero" width={900} height={560} className="w-full h-auto object-cover rounded-2xl" />
-          </motion.div>
+            <motion.div initial={{ scale: 0.98, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 0.6 }} className="rounded-2xl overflow-hidden shadow-xl">
+              <img src={PRODUCTS[0]?.img} alt="hero" className="w-full h-auto object-cover rounded-2xl" />
+            </motion.div>
         </section>
 
         {/* Products */}
@@ -93,17 +75,17 @@ export default function Page() {
           <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {PRODUCTS.map((p) => (
               <article key={p.id} className="bg-white rounded-2xl p-4 shadow hover:shadow-lg transition">
-                <div className="h-44 w-full overflow-hidden rounded-lg">
-                  <Image src={p.img} alt={p.name} width={400} height={300} className="object-cover w-full h-full" />
-                </div>
+                  <div className="h-44 w-full overflow-hidden rounded-lg">
+                    <img src={p.img} alt={p.name} className="object-cover w-full h-full" />
+                  </div>
                 <div className="mt-3 flex items-start justify-between">
                   <div>
                     <div className="font-semibold text-slate-800">{p.name}</div>
-                    <div className="text-xs text-slate-500">{p.unit} • {p.tag}</div>
+                    <div className="text-xs text-slate-500">{p.unit} • {p.tags?.[0]}</div>
                   </div>
                   <div className="text-right">
                     <div className="font-bold text-royalBlue">₹{p.price}</div>
-                    <div className="text-xs text-gold/80">{p.tag}</div>
+                    <div className="text-xs text-gold/80">{p.tags?.[0]}</div>
                   </div>
                 </div>
                 <div className="mt-4 flex gap-2">

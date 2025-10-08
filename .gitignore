@@ -1,1 +1,8 @@
 node_modules
+/.next
+tmp_*.txt
+*.log
+/.idea
+/.vscode
+dist
+build
