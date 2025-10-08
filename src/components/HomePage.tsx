@@ -11,8 +11,10 @@ import { ImageWithFallback } from './figma/ImageWithFallback'
 import { Truck, Heart, Shield, Clock } from 'lucide-react'
 
 interface HomePageProps {
-  setCurrentView: (view: string) => void
-  setSelectedProduct: (product: Product) => void
+  // Accept the React state setters directly so the parent can pass setCurrentView
+  setCurrentView: React.Dispatch<React.SetStateAction<string>>
+  // Parent's selectedProduct is Product | null, so accept the correct setter shape
+  setSelectedProduct: React.Dispatch<React.SetStateAction<Product | null>>
 }
 
 export default function HomePage({ setCurrentView, setSelectedProduct }: HomePageProps) {

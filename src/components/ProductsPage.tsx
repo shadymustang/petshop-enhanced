@@ -1,8 +1,9 @@
 import { getProducts, Product } from '../lib/products'
 import ProductCard from './ProductCard'
+import { View } from '@/types'
 
 interface ProductsPageProps {
-  setCurrentView: (view: string) => void
+  setCurrentView: React.Dispatch<React.SetStateAction<View>>
   setSelectedProduct: (product: Product) => void
 }
 

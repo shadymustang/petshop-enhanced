@@ -1,12 +1,13 @@
 "use client"
 
 import { Button } from './ui/button'
+import { View } from '@/types'
 import { Card, CardContent } from './ui/card'
 import { CheckCircle, Home, Package, Truck } from 'lucide-react'
 
 interface OrderSuccessPageProps {
   orderId: string
-  setCurrentView: (view: string) => void
+  setCurrentView: React.Dispatch<React.SetStateAction<View>>
 }
 
 export default function OrderSuccessPage({ orderId, setCurrentView }: OrderSuccessPageProps) {

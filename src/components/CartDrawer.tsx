@@ -6,10 +6,12 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle } from './ui/sheet'
 import { ImageWithFallback } from './figma/ImageWithFallback'
 import { Minus, Plus, Trash2 } from 'lucide-react'
 
+import { View } from '@/types'
+
 interface CartDrawerProps {
   open: boolean
   setOpen: (open: boolean) => void
-  setCurrentView: (view: string) => void
+  setCurrentView: React.Dispatch<React.SetStateAction<View>>
 }
 
 export default function CartDrawer({ open, setOpen, setCurrentView }: CartDrawerProps) {

@@ -4,9 +4,11 @@ import { Heart, ShoppingCart } from 'lucide-react'
 import { useCart } from '../context/CartContext'
 import { Button } from './ui/button'
 
+import { View } from '@/types'
+
 interface HeaderProps {
   currentView: string
-  setCurrentView: (view: string) => void
+  setCurrentView: React.Dispatch<React.SetStateAction<View>>
   setCartOpen: (open: boolean) => void
 }
 

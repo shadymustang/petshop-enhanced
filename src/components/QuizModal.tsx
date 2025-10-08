@@ -8,7 +8,8 @@ import { Label } from './ui/label'
 
 interface QuizModalProps {
   open: boolean
-  setOpen: (open: boolean) => void
+  // Accept the React state setter directly so callers can pass `setQuizOpen`
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export default function QuizModal({ open, setOpen }: QuizModalProps) {

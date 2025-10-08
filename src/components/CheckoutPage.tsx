@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useCart } from '../context/CartContext'
 import { mockCheckout } from '../lib/products'
 import { Button } from './ui/button'
+import { View } from '@/types'
 import { Input } from './ui/input'
 import { Label } from './ui/label'
 import { Textarea } from './ui/textarea'
@@ -14,7 +15,7 @@ import { ArrowLeft, CreditCard, Truck, Shield } from 'lucide-react'
 import { toast } from 'sonner'
 
 interface CheckoutPageProps {
-  setCurrentView: (view: string) => void
+  setCurrentView: React.Dispatch<React.SetStateAction<View>>
   setOrderId: (orderId: string) => void
 }
 

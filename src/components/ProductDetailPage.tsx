@@ -1,6 +1,7 @@
 "use client"
 
 import { Product } from '../lib/products'
+import { View } from '@/types'
 import { useCart } from '../context/CartContext'
 import { Button } from './ui/button'
 import { Card, CardContent } from './ui/card'
@@ -11,7 +12,7 @@ import { toast } from 'sonner'
 
 interface ProductDetailPageProps {
   product: Product
-  setCurrentView: (view: string) => void
+  setCurrentView: React.Dispatch<React.SetStateAction<View>>
 }
 
 export default function ProductDetailPage({ product, setCurrentView }: ProductDetailPageProps) {
