@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from './ui/button'
 import { Card, CardContent } from './ui/card'
 import { CheckCircle, Home, Package, Truck } from 'lucide-react'

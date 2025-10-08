@@ -1,3 +1,5 @@
+"use client"
+
 import { Heart, ShoppingCart } from 'lucide-react'
 import { useCart } from '../context/CartContext'
 import { Button } from './ui/button'

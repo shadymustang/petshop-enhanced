@@ -1,3 +1,5 @@
+"use client"
+
 import { Product } from '../lib/products'
 import { useCart } from '../context/CartContext'
 import { Button } from './ui/button'

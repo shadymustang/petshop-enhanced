@@ -1,3 +1,5 @@
+"use client"
+
 import { useCart } from '../context/CartContext'
 import { Button } from './ui/button'
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from './ui/sheet'
